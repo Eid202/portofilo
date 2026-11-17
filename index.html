@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالي - Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 35px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            max-width: 430px;
+            width: 100%;
+        }
+        /* تنسيق الصورة الشخصية */
+        .profile-img {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .subtitle {
+            color: #60a5fa;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        /* تنسيق شارات المهارات */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .skill-badge {
+            background-color: #334155;
+            color: #38bdf8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .section-title {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            text-align: right;
+        }
+        /* أزرار المشاريع */
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 13px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 20px;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        /* أزرار التواصل الاجتماعي */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+        .social-link {
+            background-color: #334155;
+            color: #f8fafc;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .social-link:hover {
+            background-color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- صورتك الشخصية (تأكد أن اسمها me.jpg في نفس الفولدر) -->
+        <img src="KIMO9184.jpg" alt="صورتي الشخصية" class="profile-img">
+        
+        <h1>أهلاً بيك، أنا عيد 🚀</h1>
+        <div class="subtitle">مطور مواقع ويب (Web Developer)</div>
+        <p>أهلاً بيك في معرض أعمالي! هنا بشارك مشاريعي اللي ببرمجها خطوة بخطوة في رحلتي لتعلم تطوير المواقع.</p>
+        
+        <!-- المهارات -->
+        <div class="skills">
+            <span class="skill-badge">HTML5</span>
+            <span class="skill-badge">CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">GitHub</span>
+        </div>
+
+        <div class="section-title">📂 أعمالي ومشاريعي:</div>
+        <div class="projects">
+            <a href="calculator.html" class="btn">
+                <span>🧮 آلة حاسبة (Calculator)</span>
+                <span>⬅️</span>
+            </a>
+            <a href="to_do.html" class="btn">
+                <span>📝 قائمة المهام (To-Do List)</span>
+                <span>⬅️</span>
+            </a>
+        </div>
+
+        <!-- روابط التواصل -->
+        <div class="socials">
+          <a href="https://github.com" target="_blank" class="social-link">🐙 GitHub</a>
+          <a href="https://wa.me/201022657559" target="_blank" class="social-link" style="background-color: #16a34a;">💬 واتساب</a>
+          <a href="mailto:yourname@gmail.com" class="social-link" style="background-color: #dc2626;">✉️ إيميل</a>
+          <a href="tel:+201022657559" class="social-link" style="background-color: #2563eb;">📞 اتصل بي</a>
+         </div>
+    </div>
+
+</body>
+</html>
