@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المهام اليومية - To-Do List</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #444;
+            background-color: #2d2d2d;
+            color: white;
+            border-radius: 6px;
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #2d2d2d;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>قائمة مهامي 📝</h2>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="اكتب مهمة جديدة...">
+            <button onclick="addTask()">إضافة</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const taskText = input.value.trim();
+
+            if (taskText === "") {
+                alert("من فضلك اكتب مهمة صحيحة!");
+                return;
+            }
+
+            const ul = document.getElementById('taskList');
+            const li = document.createElement('li');
+
+            li.innerHTML = `
+                <span onclick="toggleTask(this)">${taskText}</span>
+                <button class="delete-btn" onclick="deleteTask(this)">حذف</button>
+            `;
+
+            ul.appendChild(li);
+            input.value = "";
+        }
+
+        function toggleTask(element) {
+            element.parentElement.classList.toggle('completed');
+        }
+
+        function deleteTask(element) {
+            element.parentElement.remove();
+        }
+    </script>
+</html>
+</body>
